@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2020-03-31T13:08:52.804Z",
-    "end": "2020-03-31T13:09:07.324Z",
-    "duration": 14520,
+    "failures": 0,
+    "start": "2020-03-31T13:51:04.356Z",
+    "end": "2020-03-31T13:51:05.378Z",
+    "duration": 1022,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,17 +18,17 @@
   },
   "results": [
     {
-      "uuid": "7ae9ac28-e828-4003-aae9-a019a8581ec1",
+      "uuid": "a54d4b8d-f170-4591-a3ef-5f2e43edf28f",
       "title": "",
-      "fullFile": "cypress\\integration\\OtherTests\\Test8Framework.spec.js",
-      "file": "cypress\\integration\\OtherTests\\Test8Framework.spec.js",
+      "fullFile": "cypress\\integration\\OtherTests\\APITest.spec.js",
+      "file": "cypress\\integration\\OtherTests\\APITest.spec.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "f40bd672-94a9-4373-a3fe-b2376ef4a4b3",
-          "title": "My Second Test Suite",
+          "uuid": "e58e1f6b-0a23-4dfc-991a-0dab770eb409",
+          "title": "My First Test Suite",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
@@ -36,35 +36,31 @@
           "tests": [
             {
               "title": "My FirstTest case",
-              "fullTitle": "My Second Test Suite My FirstTest case",
+              "fullTitle": "My First Test Suite My FirstTest case",
               "timedOut": null,
-              "duration": 11747,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 972,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
-              "code": "var homePage = new _HomePage[\"default\"]();\nvar productPage = new _ProductPage[\"default\"]();\ncy.visit(Cypress.env('url') + \"/angularpractice/\");\nhomePage.getEditBox().type(this.data.name);\nhomePage.getGender().select(this.data.gender);\nhomePage.getTwoWayDataBinding().should('have.value', this.data.name);\nhomePage.getEditBox().should('have.attr', 'minlength', '2');\nhomePage.getEntrepreneaur().should('be.disabled');\nCypress.config('defaultCommandTimeout', 8000);\nhomePage.getShopTab().click();\nthis.data.productName.forEach(function (element) {\n  cy.selectProduct(element);\n});\nproductPage.checkOutButton().click();\nvar sum = 0;\ncy.get('tr td:nth-child(4) strong').each(function ($el, index, $list) {\n  var amount = $el.text();\n  var res = amount.split(\" \");\n  res = res[1].trim();\n  sum = Number(sum) + Number(res);\n}).then(function () {\n  cy.log(sum);\n});\ncy.get('h3 strong').then(function (element) {\n  var amount = element.text();\n  var res = amount.split(\" \");\n  var total = res[1].trim();\n  expect(Number(total)).to.equal(sum);\n});\ncy.contains('Checkout').click();\ncy.get('#country').type('India');\ncy.get('.suggestions > ul > li > a').click();\ncy.get('#checkbox2').click({\n  force: true\n});\ncy.get('input[type=\"submit\"]').click(); //cy.get('.alert').should('have.text','Success! Thank you! Your order will be delivered in next few weeks :-).')\ncy.get('.alert').then(function (element) {\n  var actualText = element.text();\n  expect(actualText.includes(\"Success\")).to.be[\"true\"];\n});",
-              "err": {
-                "message": "CypressError: Timed out retrying: Expected to find element: '.suggestions > ul > li > a', but never found it.",
-                "estack": "CypressError: Timed out retrying: Expected to find element: '.suggestions > ul > li > a', but never found it.\n    at cypressErr (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:138644:9)\n    at throwErr (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:138577:11)\n    at Object.throwErrByPath (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:138625:3)\n    at retry (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:132905:19)\n    at onFailFn (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:121122:16)\n    at tryCatcher (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:165465:23)\n    at Promise._settlePromiseFromHandler (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:163401:31)\n    at Promise._settlePromise (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:163458:18)\n    at Promise._settlePromise0 (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:163503:10)\n    at Promise._settlePromises (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:163578:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:160190:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:160200:10)\n    at Async.drainQueues (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:160074:14)",
-                "diff": null
-              },
-              "uuid": "9851c8c2-2509-4693-9a1b-9b16c17fe09d",
-              "parentUUID": "f40bd672-94a9-4373-a3fe-b2376ef4a4b3",
+              "code": "cy.request('POST', 'http://216.10.245.166/Library/Addbook.php', {\n  \"name\": \"Learn Appium Automation with Java\",\n  \"isbn\": \"bcggsss\",\n  \"aisle\": \"22s7\",\n  \"author\": \"John foe\"\n}).then(function (response) {\n  expect(response.body).to.have.property(\"Msg\", \"successfully added\");\n  expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "1f09264a-d01a-4300-ba68-56bbf5a1078c",
+              "parentUUID": "e58e1f6b-0a23-4dfc-991a-0dab770eb409",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "9851c8c2-2509-4693-9a1b-9b16c17fe09d"
+          "passes": [
+            "1f09264a-d01a-4300-ba68-56bbf5a1078c"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 11747,
+          "duration": 972,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
