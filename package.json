@@ -7,9 +7,9 @@
     "test": "cypress run --reporter mochawesome",
     "open": "cypress open",
     "headTest": "cypress run --headed",
-    "chromeTest": "npm run test -- --browser chrome",
-    "recordDashBoardTest": "npm run test -- --record --key 0d583ff5-5d58-47dd-8437-8c562db8cd3d --reporter mochawesome",
-    "GreenKartTest": "npm run test -- --spec \"cypress/integration/GreenKart/*\""
+    "chromeTest": "cypress run test -- --browser chrome",
+    "recordDashBoardTest": "cypress run test -- --record --key 0d583ff5-5d58-47dd-8437-8c562db8cd3d --reporter mochawesome --spec \"cypress/integration/GreenKart/Test1.spec.js",
+    "GreenKartTest": "cypress run --spec \"cypress/integration/GreenKart/*\""
   },
   "keywords": [],
   "author": "",
